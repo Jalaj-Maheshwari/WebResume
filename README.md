@@ -3,7 +3,7 @@
 WebResume
 -----------------------
 
-Personal Portfolio Website
+Weather App
 ---------------------------------
 
 A Personal Portfolio website which provide details about educational background, technical projects,
