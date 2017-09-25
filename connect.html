@@ -1,0 +1,66 @@
+<!--NOTE: THIS CODE WORKS ONLY FOR INTERNET EXPLORER OR FIREFOX-->
+<html>
+<head>
+<link rel="stylesheet" href="css/connect.css">
+<script type="text/javascript" language="JavaScript" >
+var flag;
+function validateEmail() 
+{
+    var email = document.getElementById('input-email').value;
+    var re = /\S+@\S+\.\S+/;
+    if (!re.test(email))
+    {
+     alert("Please Enter the details correctly!");
+     flag=1;
+    }
+}
+
+function Adddata() 
+{ 
+	flag=0;
+	validateEmail();
+var usname = document.getElementById('input-name').value;
+var email = document.getElementById('input-email').value;
+var loc = document.getElementById('input-location').value;
+var msg = document.getElementById('input-message').value;
+if (usname.length != 0 && email.length !=0 && loc.length !=0 && msg.length !=0 && flag!=1)
+  {
+  	var cn = new ActiveXObject("ADODB.Connection");
+var pad = "C:\\Users\\Bubu\\WebResume\\connect.mdb";
+var strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=False;Data Source=" + pad; 
+cn.Open(strConn);
+var rs = new ActiveXObject("ADODB.Recordset"); 
+var SQL= "select * from ConnectInfo";
+rs.Open(SQL,cn,1,3);
+rs.AddNew;
+rs.Fields("Name").value = usname;
+rs.Fields("EmailAdd").value = email;
+rs.Fields("Loc").value = loc;
+rs.Fields("Msg").value = msg;
+rs.Update();
+alert("Thank you for connecting with me");
+rs.close();
+cn.Close();
+}
+else
+{
+	alert("Please Enter the details correctly!");
+}
+}	
+</script>
+</head>
+<body background="C:\\Users\\Bubu\\WebResume\\images\\connect.jpg">
+<h1 class="orange-text">Let's Connect!! :)</h1>
+<form class="cf">
+  <div class="half left cf">
+    <input type="text" id="input-name" placeholder="Name">
+    <input type="email" id="input-email" placeholder="Email address" onchange="validateEmail()">
+    <input type="text" id="input-location" placeholder="Location">
+  </div>
+  <div class="half right cf">
+    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+  </div>
+  <input type="submit" value="Submit" id="input-submit" onclick="Adddata()">
+</form>
+<div id="back"><a href="C:\Users\Bubu\WebResume\index.html" class="new-text">Back to WebResume</a></div>
+</body>

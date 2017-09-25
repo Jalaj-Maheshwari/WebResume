@@ -1,0 +1,119 @@
+<html>
+
+<head>
+  <!-- This tells the browser how to read the document. &callback=initMap >
+  <meta charset="utf-8">
+
+ 
+  <title>Resume</title>
+  
+  
+
+  <!-- Load the page styles. -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="js/jQuery.js"></script>
+ 
+   <script src="js/helper.js"></script>
+   <script src="js/Scroller.js"></script>
+  
+ <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCHaphYJeHDxJNRq1toGaCe1AcjFggHMiA"></script>
+     
+  <meta name="viewport" content="width=device-width">
+
+    
+ 
+</head>
+<body>
+
+
+  <div id="main"> </div>
+   
+
+    <div id="header" class="center-content clear-fix">
+      <ul id="topContacts" class="flex-box"></ul>
+    </div>
+    <nav id="nav-bar">
+        <ul id="nav-menu">
+          <li><a class="nav-item" href="#education">EDUCATION</a>
+          </li>
+          <li><a class="nav-item" href="#projects">PROJECTS</a>
+          </li>
+          <li><a class="nav-item" href="#Achievements">ACHIEVEMENTS</a>
+          </li>
+          <li><a class="nav-item" href="#mapDiv">PLACES</a>
+          </li>
+        </ul>
+      </nav>
+
+    <div style="clear: both;"></div>
+
+   <div id="education" class="gray">
+      <h2>Education</h2>
+    </div>
+
+   <div id="work" class="gray">
+   </div>
+
+        
+    
+  <div id="projects">
+      <h2>Projects</h2>
+    </div>
+
+    <div id="Achievements">
+      <h2>Achievements</h2>
+    </div>
+
+   
+    <div id="mapDiv">
+      <h2>Places Where I've Lived, Studied and Been To</h2>
+    </div>
+
+      <!-- Javascript -->
+      
+ <script type="text/javascript"  ></script>
+
+    <div id="lets-connect" class="dark-gray">
+      <h2 id="connection" class="orange center-text"><a href="C:\Users\Bubu\WebResume\connect.html" >Let's Connect</a></h2> 
+      <div style="clear: both;"></div>
+   
+      <!-- HTML --> 
+      
+      
+
+
+        <ul id="footerContacts" class="flex-box">
+            </ul>
+
+    </div>
+
+
+    
+
+<script type="text/javascript" src="js/resumeBuilder.js">
+  if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('topContacts').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('lets-connect').style.backgroundColor = 'black';
+    }
+    if(document.getElementById('map') === null) {
+      document.getElementById('mapDiv').style.backgroundColor = 'black';
+    }
+</script>
+
+</body>
+</html>
